@@ -36,8 +36,6 @@ describe('ListProviderDayAvailability', () => {
       day: 5,
     });
 
-    console.log(availability);
-
     expect(availability).toEqual(
       expect.arrayContaining([
         { hour: 8, available: false },
