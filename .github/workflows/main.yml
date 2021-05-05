@@ -24,6 +24,7 @@ jobs:
       - name: Run build
         run: yarn build
         
+      # Copiar novo código para dentro da Digital Ocean
       - name: Copy dist to Digital Ocean
         uses: appleboy/scp-action@master
         with:
@@ -31,14 +32,14 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           port: ${{ secrets.SSH_PORT }}
           key: ${{ secrets.SSH_KEY }}
-          source: "."
+          source: "., !node_modules"
           target: "~/app/GoBarberBackEnd"
       
-
-      # Copiar pasta dist para dentro da Digital Ocean
-      
-      # Substituir o código existente na página `dist` pelo novo código 
       # Executar `yarn` na Digital Ocean
+      
+      
       # Executar as migrations do TypeORM
+      
+      
       # Restart no servidor Node.js
       
